@@ -1,0 +1,32 @@
+<p [ngClass]="estilo">comp-atributos works!</p>
+<button (click)="trocar()">Trocar</button>
+<h1 [ngStyle]="{'background': corFundo}">Curso Angular</h1>
+
+<!--renderiza conteúdo, aqui tá vindo atribuito do app-component-->
+<ng-content select="h2"></ng-content>
+
+<h1>Lista de compras</h1>
+<p>Adicone um item</p>
+<input type="text" [(ngModel)]="item">
+<button (click)="adicionarLista()">ADICIONAR</button>
+<p>{{item}}</p>
+
+<ul>
+  <li *ngFor="let elemento of lista">{{elemento}}</li>
+</ul>
+
+<hr>
+
+
+<!--Ng-template Funciona só se estiver true-->
+<ng-template [ngIf]="isEnableBlock">
+  <a href="#">FINALIZAR COMPRA</a>
+</ng-template>
+
+
+
+<ng-template [ngIf]="isEnableBlock">
+  <a href="#">ADICIONAR AO CARRINHO</a>
+</ng-template>
+
+<hr>
